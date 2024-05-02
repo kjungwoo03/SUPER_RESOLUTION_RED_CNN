@@ -1,0 +1,30 @@
+dataset:
+  data_dir: '/Dataset'
+  train:
+    patient_ID_train: ['L067','L096','L310','L143','L192','L286','L291']
+    repeat: 2
+  valid:
+    patient_ID_valid: ['L109']
+  test:
+    patient_ID_test: ['L333', 'L506']
+  augment: true
+  batch_size: 8
+
+model:
+  name: redcnn
+
+optimizer:
+  name: ADAM
+  lr: 1.e-4
+  milestones: [40, 80, 120, 160]
+  gamma: 0.5
+  weight_decay: 0
+
+epochs: 200
+test_every: 1
+save_models: false
+resume: -1
+
+n_threads: 8
+cpu: false
+seed: 1
